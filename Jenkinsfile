@@ -4,7 +4,7 @@ pipeline {
     environment {
         ARTIFACT_NAME = 'spring-boot-hello-world-1.0-SNAPSHOT.jar'
         GIT_REPO="https://github.com/pgrimard/spring-boot-hello-world.git"
-        GIT_REPO_2="https://github.com/suleymanyigit/trendcase.git"
+        GIT_REPO_2="git@github.com:suleymanyigit/trendcase.git"
         GIT_BRANCH="master"
         ARTIFACT_FOLDER = "target"
         service='case'
