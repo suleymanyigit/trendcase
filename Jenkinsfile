@@ -24,13 +24,13 @@ pipeline {
                         
         stage('Build Docker Image') {
             steps{
-               sh "docker build --rm -t ${registry}/${service}:1.0.0 -t ${registry}/${service}:${APPLICATION_NAME} ."
+               sh "docker build --rm -t ${registry}/${service}:1.0.0 -t ${registry}/${service}:${ARTIFACT_NAME} ."
             }
          }
          
         stage('Push Docker Image') {
             steps {
-               sh "docker push ${registry}/${service}:${APPLICATION_NAME}"
+               sh "docker push ${registry}/${service}:${ARTIFACT_NAME}"
                sh "docker push ${registry}/${service}:1.0.0"
             }
         }
