@@ -26,5 +26,6 @@ RUN curl -o /tmp/jce_policy-8.zip -H "Cookie:oraclelicense=accept-securebackup-c
  /bin/cp -rf /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/java/latest/jre/lib/security;
 
 
-
+ADD target/spring-boot-hello-world-1.0-SNAPSHOT.jar Hello_World.jar
 EXPOSE 8080
+CMD java - jar Hello_World.jar
