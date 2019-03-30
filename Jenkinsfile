@@ -41,5 +41,13 @@ pipeline {
                sh "docker push ${registry}/${service}:1.0.0"
             }
         }
+        stage('Docker Run') {
+            steps {
+               sh "ssh root@10.156.0.3 'docker run -i -t suleymanyigit/case:1.0.0 /bin/bash'"
+               sh "ssh root@10.156.0.4 'docker run -i -t suleymanyigit/case:1.0.0 /bin/bash'"
+            }
+               
+        }
     }
+
 }
