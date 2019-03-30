@@ -43,8 +43,8 @@ pipeline {
         }
         stage('Docker Run') {
             steps {
-               sh "ssh root@10.156.0.3 'docker run -i -t suleymanyigit/case:1.0.0'"
-               sh "ssh root@10.156.0.4 'docker run -i -t suleymanyigit/case:1.0.0'"
+               sh "ssh root@10.156.0.3 'docker run -d suleymanyigit/case:1.0.0'"
+               sh "ssh root@10.156.0.4 'docker run -d suleymanyigit/case:1.0.0'"
             }
                
         }
