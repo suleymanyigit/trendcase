@@ -31,7 +31,7 @@ pipeline {
                         
         stage('Build Docker Image') {
             steps{
-               sh "docker build --rm -t ${registry}/${service}:1.0.0 -t ${registry}/${service}:${ARTIFACT_NAME} ."
+               sh "docker build --rm -t ${registry}/${service}:1.0.0 -t ${registry}/${service}:${ARTIFACT_NAME} trendcase"
             }
          }
          
