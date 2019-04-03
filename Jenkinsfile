@@ -43,8 +43,8 @@ pipeline {
         }
         stage('Docker Run') {
             steps {
-               sh "ssh root@10.156.0.3 'docker run -d -p 8080:8080 suleymanyigit/case:1.0.0'"
-               sh "ssh root@10.156.0.4 'docker run -d -p 8080:8080 suleymanyigit/case:1.0.0'"
+               sh "ssh root@10.156.0.3 'docker rm -f $(docker ps -a -q) && docker run -d -p 8080:8080 suleymanyigit/case:1.0.0'"
+               sh "ssh root@10.156.0.4 'docker rm -f $(docker ps -a -q) && docker run -d -p 8080:8080 suleymanyigit/case:1.0.0'"
             }
                
         }
